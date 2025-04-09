@@ -1,0 +1,51 @@
+{
+    "name": "r3bzya/laravel-helpers",
+    "description": "Additional helpers to work with laravel",
+    "homepage": "https://github.com/R3bzya/laravel-helpers",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "spatie/laravel-query-builder": "^6.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "files": [
+            "functions.php"
+        ],
+        "psr-4": {
+            "R3bzya\\Helpers\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "R3bzya\\Helpers\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Aleksey R3bzya Yakushev",
+            "email": "r3bzya@gmail.com",
+            "homepage": "https://github.com/R3bzya",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "R3bzya\\Helpers\\Providers\\HelpersServiceProvider"
+            ]
+        }
+    }
+}
