@@ -17,9 +17,12 @@ abstract class AbstractPage
 
     protected function getLimit(): int
     {
+        $limitMax = config('laravel-helpers.pagination.limit_max', 100);
+        $limitDefault = config('laravel-helpers.pagination.limit_default', 15);
+
         return $this->request->has('pagination.limit')
-            ? min($this->request->input('pagination.limit'), config('pagination.limit_max', 100))
-            : config('pagination.limit_default', 15);
+            ? min($this->request->input('pagination.limit'), $limitMax)
+            : $limitDefault;
     }
 
     protected function getOffset(): int
